@@ -147,4 +147,4 @@ and human approval.
 
 ## License
 
-[MIT](LICENSE)
+[GNU General Public License v3.0 or later](LICENSE)
