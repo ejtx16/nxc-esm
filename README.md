@@ -138,6 +138,13 @@ Tests use `rules` mode, so they need no API key or internet. To check the fronte
 - [Simulation guide](docs/guides/simulation-guide.md)
 - [Known gaps and KPI results](docs/product/mvp-requirements.md)
 
+## Video overview
+
+A 30-second explainer of how the app works: alerts grouped into one incident, the four agents, the Guardrail
+and human approval.
+
+[Watch the video (MP4)](media/esm-agentic-ops-explainer.mp4)
+
 ## License
 
 [MIT](LICENSE)
