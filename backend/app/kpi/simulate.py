@@ -321,8 +321,8 @@ def run_simulation() -> dict:
 def _run_subprocess() -> None:
     from app.data import db
     out = settings.DATA_DIR / "kpi_results.json"
-    env = {**os.environ, "NEXA_DB_PATH": str(settings.DATA_DIR / "kpi_sim.db"), "LLM_MODE": "rules",
-           "NEXA_SIM_START": settings.CASE_START.isoformat()}   # modelled against the case calendar, not today
+    env = {**os.environ, "ESM_DB_PATH": str(settings.DATA_DIR / "kpi_sim.db"), "LLM_MODE": "rules",
+           "ESM_SIM_START": settings.CASE_START.isoformat()}   # modelled against the case calendar, not today
     _status.update(running=True, started=time.time(), error=None)
     try:
         proc = subprocess.run([sys.executable, "-m", "app.kpi.simulate", "--out", str(out)], cwd=settings.BASE_DIR,

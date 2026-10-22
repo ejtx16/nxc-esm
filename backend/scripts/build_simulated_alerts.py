@@ -5,7 +5,7 @@
 The 80 logged alerts have labels that do not follow any visible pattern, so they cannot show whether the noise logic
 works. This stream does: noise comes from flapping signatures on chatty systems and mostly self-recovers; real alerts
 are mostly High/Critical and stay open. About 12% of rows deliberately break the pattern so accuracy is not 100% by
-construction. It is synthetic. Quote it as a simulation, never as a measurement of NexaCore's real alerts.
+construction. It is synthetic. Quote it as a simulation, never as a measurement of the client's real alerts.
 """
 from __future__ import annotations
 

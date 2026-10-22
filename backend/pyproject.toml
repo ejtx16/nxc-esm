@@ -1,8 +1,9 @@
 [project]
-name = "nexacore-ops"
+name = "esm-agentic-ops"
 version = "0.1.0"
-description = "NexaCore Agentic Ops Intelligence — LangGraph multi-agent prototype"
+description = "ESM Agentic Ops — LangGraph multi-agent prototype"
 requires-python = ">=3.10"
+license = { text = "MIT" }
 dependencies = [
   "anthropic>=1.17",
   "langgraph>=1.0",
@@ -15,6 +16,9 @@ dependencies = [
   "python-dotenv>=1.0",
   "scikit-learn>=1.4",
 ]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "pytest-bdd>=7", "httpx>=0.27"]

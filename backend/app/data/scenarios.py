@@ -152,8 +152,8 @@ def licensecore_outage(seed: int = 7) -> Scenario:
         ev.append(_sr_event(rng, rng.uniform(60, 1200), rng.choice(pool), "Password Reset", "portal", free_text=i % 2 == 0))
     ev.append(SEvent(700, "sr", {"requestor_id": "EMP1003", "channel": "portal", "request_type": "Access Provisioning",
                                  "target_system": "BillingEngine", "access_level": "admin", "text": None}))
-    ev.append(SEvent(360, "incident", {"description": TICKET_DESCRIPTIONS[0], "reported_by": "user_410@nexacore.com"}))
-    ev.append(SEvent(600, "incident", {"description": TICKET_DESCRIPTIONS[1], "reported_by": "user_233@nexacore.com"}))
+    ev.append(SEvent(360, "incident", {"description": TICKET_DESCRIPTIONS[0], "reported_by": "user_410@example.com"}))
+    ev.append(SEvent(600, "incident", {"description": TICKET_DESCRIPTIONS[1], "reported_by": "user_233@example.com"}))
 
     base = settings.sim_start()                   # the case has the outage at 09:00, five minutes after "now"
 
@@ -226,7 +226,7 @@ def normal_day(seed: int = 5) -> Scenario:
         kind = rng.choices(["Password Reset", "Access Provisioning", "Software Installation", "Report Request"], [0.5, 0.25, 0.15, 0.10])[0]
         ev.append(_sr_event(rng, t, rng.choice(pool), kind, rng.choice(["portal", "ticket"]), free_text=rng.random() < 0.3))
     for t in sorted(rng.uniform(0, dur) for _ in range(12)):
-        ev.append(SEvent(t, "incident", {"description": rng.choice(TICKET_DESCRIPTIONS), "reported_by": f"user_{rng.randint(100, 999)}@nexacore.com"}))
+        ev.append(SEvent(t, "incident", {"description": rng.choice(TICKET_DESCRIPTIONS), "reported_by": f"user_{rng.randint(100, 999)}@example.com"}))
     return Scenario("normal_day", "A normal day", "Mixed alerts, incident tickets and service requests at typical rates.",
                     settings.sim_start().replace(hour=0, minute=0), dur, dur / 60, sorted(ev, key=lambda e: e.t), None, "KPIs")
 
@@ -279,7 +279,7 @@ def excel_calibrated_day(seed: int = 5) -> Scenario:
         ev.append(_sr_event(rng, t, rng.choice(pool), kind, rng.choice(["portal", "ticket"]),
                             free_text=kind in ("Password Reset", "Access Provisioning") and rng.random() < 0.3))
     for t in sorted(rng.uniform(0, dur) for _ in range(12)):
-        ev.append(SEvent(t, "incident", {"description": rng.choice(TICKET_DESCRIPTIONS), "reported_by": f"user_{rng.randint(100, 999)}@nexacore.com"}))
+        ev.append(SEvent(t, "incident", {"description": rng.choice(TICKET_DESCRIPTIONS), "reported_by": f"user_{rng.randint(100, 999)}@example.com"}))
     return Scenario("excel_calibrated_day", "A normal day (Excel-calibrated)",
                     "The normal day's volumes, with alert noise, severity, self-recovery and the SR mix drawn from the "
                     "Excel files instead of the case figures.",

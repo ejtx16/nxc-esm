@@ -16,7 +16,7 @@ from pathlib import Path
 
 BACKEND = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(BACKEND))
-os.environ["NEXA_DB_PATH"] = str(Path(tempfile.mkdtemp()) / "curate.db")   # never touch the live database
+os.environ["ESM_DB_PATH"] = str(Path(tempfile.mkdtemp()) / "curate.db")   # never touch the live database
 
 import pandas as pd  # noqa: E402
 

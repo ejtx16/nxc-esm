@@ -242,8 +242,8 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Run the three validation scenarios (docs/validation/validation-scenarios.md)")
     ap.add_argument("--out", default=str(settings.DATA_DIR / "validation_results.json"))
     args = ap.parse_args()
-    os.environ.setdefault("NEXA_DB_PATH", str(settings.DATA_DIR / "validation.db"))   # never the demo database
-    os.environ.setdefault("NEXA_SIM_START", settings.CASE_START.isoformat())
+    os.environ.setdefault("ESM_DB_PATH", str(settings.DATA_DIR / "validation.db"))   # never the demo database
+    os.environ.setdefault("ESM_SIM_START", settings.CASE_START.isoformat())
     os.environ["LLM_MODE"] = "rules"
     res = run_validation()
     Path(args.out).write_text(json.dumps(res, indent=2, default=str))

@@ -1,7 +1,7 @@
 import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 
 /**
- * NexaCore Ops theme. Cool mineral ground, ink navy, and one amber accent.
+ * ESM Ops theme. Cool mineral ground, ink navy, and one amber accent.
  * Chakra's own semantic tokens (bg, bg.panel, fg.muted, border) are remapped so every
  * built-in component picks up the look without per-component overrides.
  */

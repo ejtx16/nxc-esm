@@ -17,7 +17,7 @@ const NAV = [
 ];
 
 const MARK = "data:image/svg+xml;utf8," + encodeURIComponent(
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#f2b705"/><path d="M6 24 L6 8 L9 8 L23 21 L23 8 L26 8 L26 24 L23 24 L9 11 L9 24 Z" fill="#13222B"/></svg>',
+  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#f2b705"/><path d="M16 9 L9 22 L23 22 Z" fill="none" stroke="#13222B" stroke-width="2" stroke-linejoin="round"/><g fill="#13222B"><circle cx="16" cy="9" r="3.5"/><circle cx="9" cy="22" r="3.5"/><circle cx="23" cy="22" r="3.5"/></g></svg>',
 );
 
 const BellIcon = () => (
@@ -113,7 +113,7 @@ export default function Layout() {
         <Flex align="center" gap="3" px="2" h="64px" mb={{ md: "3" }} mr={{ base: 4, md: 0 }} borderBottomWidth={{ md: "1px" }} borderColor="whiteAlpha.200">
           <Image src={MARK} alt="" boxSize="30px" />
           <Box lineHeight="1.15">
-            <Text fontWeight="600" fontSize="lg" color="white">NexaCore</Text>
+            <Text fontWeight="600" fontSize="lg" color="white">ESM Ops</Text>
             <Text fontSize="xs" color="whiteAlpha.600">Ops console</Text>
           </Box>
         </Flex>

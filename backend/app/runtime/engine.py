@@ -104,7 +104,7 @@ def reset_state() -> None:
 
 class Worker(threading.Thread):
     def __init__(self) -> None:
-        super().__init__(daemon=True, name="nexa-engine")
+        super().__init__(daemon=True, name="esm-engine")
         self._halt = threading.Event()
 
     def run(self) -> None:

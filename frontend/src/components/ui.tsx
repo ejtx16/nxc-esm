@@ -19,7 +19,7 @@ export const AGENTS: Record<string, { label: string; role: string }> = {
 };
 export const agentLabel = (a: string) => AGENTS[a]?.label ?? a;
 
-/** The nine agents in files/next-core-ai-agents.md and the audit `agent` id that records each one's work (null = none yet). */
+/** The nine agents in files/esm-ai-agents.md and the audit `agent` id that records each one's work (null = none yet). */
 export const NINE_AGENTS: { key: string; label: string; id: string | null; note?: string }[] = [
   { key: "orchestrator", label: "Operations Orchestrator Agent", id: "orchestrator" },
   { key: "alert_correlation", label: "Alert Correlation Agent", id: "alert_correlation" },

@@ -30,7 +30,7 @@ LAST = ["Nguyen", "Okafor", "Silva", "Kowalski", "Haddad", "Larsen", "Mehta", "C
 # --- KB body synthesis --------------------------------------------------------------------
 # {admin} {runbooks} {platform} {dash} {sso} {assign} resolve to a DEPRECATED path or its current equivalent.
 PLACEHOLDER_KEYS = {
-    "admin": "LicenseCore v2 admin console", "runbooks": "\\\\nexa-fs01\\runbooks", "platform": "NexaStack v3",
+    "admin": "LicenseCore v2 admin console", "runbooks": "\\\\ops-fs01\\runbooks", "platform": "OpsStack v3",
     "dash": "Splunk classic dashboards", "sso": "legacy SSO gateway", "assign": "manual round-robin assignment",
 }
 TOPIC_STEPS: list[tuple[tuple[str, ...], list[str]]] = [
@@ -242,9 +242,9 @@ def load_employees() -> int:
             name = e.get("name") or f"{rng.choice(FIRST)} {rng.choice(LAST)}"
             role = e.get("role") or DEPARTMENT_ROLE.get(e["department"], "Support")
             db.insert("employees", {"employee_id": eid, "name": name, "role": role, "department": e["department"],
-                                    "status": "active", "email": f"{eid.lower()}@nexacore.com"})
+                                    "status": "active", "email": f"{eid.lower()}@example.com"})
         db.insert("employees", {"employee_id": "EMP9999", "name": "Casey Leaver", "role": "Agent",
-                                "department": "Sales", "status": "terminated", "email": "emp9999@nexacore.com"})
+                                "department": "Sales", "status": "terminated", "email": "emp9999@example.com"})
     return len(emp) + 1
 
 
@@ -263,7 +263,7 @@ def run(reset: bool = True, score_kb: bool = True) -> dict:
 
 
 def main() -> None:
-    ap = argparse.ArgumentParser(description="Seed the NexaCore prototype database")
+    ap = argparse.ArgumentParser(description="Seed the prototype database")
     ap.add_argument("--reset", action="store_true", help="drop and rebuild all tables")
     ap.add_argument("--no-kb-score", action="store_true", help="skip the initial KB scoring pass")
     args = ap.parse_args()

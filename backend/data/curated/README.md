@@ -5,7 +5,7 @@ The check replays these rows through the agents in an isolated database (`data/k
 against `expected_*`. Regenerate with `.venv/bin/python scripts/build_curated.py`.
 
 Every Excel row is kept. `excel_label` is the spreadsheet value, `expected_*` the reviewed label, and `changed=Y`
-marks a difference, with the reason. Labels were reviewed by the prototype team, not NexaCore, so a service desk lead
+marks a difference, with the reason. Labels were reviewed by the prototype team, not the client, so a service desk lead
 should review them before any accuracy figure is quoted.
 
 | File | Rows | Relabelled | Rule |

@@ -255,7 +255,7 @@ def export(table: str = "spans", run_id: str | None = None, format: str = "csv")
     name, order = EXPORT_TABLES[table]
     w, a = _where(run_id)
     rows: list[dict[str, Any]] = db.query(f"SELECT * FROM {name} {w} ORDER BY {order}", a)
-    fname = f"nexacore-audit-{table}{'-' + run_id if run_id else ''}.{format}"
+    fname = f"esm-audit-{table}{'-' + run_id if run_id else ''}.{format}"
     if format == "jsonl":
         body = "\n".join(json.dumps(r, default=str) for r in rows)
         media = "application/x-ndjson"

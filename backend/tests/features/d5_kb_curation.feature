@@ -1,7 +1,7 @@
 Feature: KB accuracy score and update recommendation (demo item D5)
 
   Scenario: Every article is scored and given a recommendation
-    Given the seeded NexaCore database
+    Given the seeded demo database
     Then all 30 KB articles have an accuracy score and a keep, update or archive recommendation
 
   Scenario: A stale LicenseCore article is flagged and a fix is drafted for approval
