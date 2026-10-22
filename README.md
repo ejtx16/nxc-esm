@@ -1,70 +1,143 @@
-# NexaCore Agentic Ops Intelligence — prototype
+# ESM Agentic Ops
 
-A working multi-agent prototype for NexaCore's Application Managed Services, built to the plan in
-[implementation-plan.md](docs/planning/implementation-plan.md) (PRD: [prd.md](docs/product/prd.md), decision: [ADR-0001](docs/adr/0001-prototype-approach.md)).
-Four specialist agents (Alert Correlation, Incident Triage, SR Fulfilment, KB Curation) run on a shared SQLite data layer,
-coordinated by a LangGraph orchestrator and constrained by a deterministic Guardrail. Everything runs on mock data.
+A demo app that shows how AI agents can help an IT support team with Enterprise Service Management (ESM):
+handling alerts, incidents, service requests and knowledge-base articles.
+
+Everything runs on **made-up data**. Nothing connects to a real ticketing or identity system.
+
+## What it does
+
+Four AI agents each handle one kind of work:
+
+| Agent | What it does |
+|---|---|
+| **Alert Correlation** | Groups duplicate monitoring alerts into one incident instead of fifty. |
+| **Incident Triage** | Sets the priority and team for an incident and suggests a fix from the knowledge base. |
+| **SR Fulfilment** | Completes simple service requests (such as a password reset) on its own. |
+| **KB Curation** | Scores knowledge-base articles and drafts fixes for out-of-date ones. |
+
+Agents never act on their own. Every action they propose goes through a **Guardrail** first, which
+either approves it, holds it for a person to approve, or blocks it. The Guardrail follows fixed rules,
+so its decisions are predictable.
+
+## What's in this repo
 
 ```
-backend/   Python 3.10+ — FastAPI, LangGraph graph, agents, mock tools, SQLite, scenario generator, KPI simulation, tests
-frontend/  React 18 + Vite + TypeScript console (talks to the backend over /api)
-files/     the four source spreadsheets (dummy data, read-only)
-docs/      product, architecture, ADRs, design records, plan, guides, validation (index: docs/README.md)
+backend/   the server: Python, FastAPI, the agents (LangGraph) and a SQLite database
+frontend/  the web console: React + Vite
+files/     the sample spreadsheets the database is built from (read-only)
+docs/      product, design and architecture docs (start at docs/README.md)
 ```
+
+## Before you start
+
+You need:
+
+- **Python 3.10 or newer**: check with `python --version`
+- **Node.js 18 or newer**: check with `node --version`
+- **An Anthropic API key** (optional). Without one, use `rules` mode (see [AI modes](#ai-modes)).
 
 ## Run it
 
-```bash
-# 1. backend (first run creates backend/data/nexacore.db from the spreadsheets and scores the KB)
-cd backend
-python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"
-cp .env.example .env            # optional: add ANTHROPIC_API_KEY to use live Claude
-.venv/bin/uvicorn app.api.main:app --port 8000
+You need two terminals: one for the backend and one for the frontend.
 
-# 2. frontend (second terminal)
+### 1. Start the backend
+
+macOS / Linux:
+
+```bash
+cd backend
+python3 -m venv .venv
+.venv/bin/pip install -e ".[dev]"
+cp .env.example .env
+.venv/bin/uvicorn app.api.main:app --port 8000
+```
+
+Windows (PowerShell):
+
+```powershell
+cd backend
+python -m venv .venv
+.venv\Scripts\pip install -e ".[dev]"
+copy .env.example .env
+.venv\Scripts\uvicorn app.api.main:app --port 8000
+```
+
+The first start builds the database from the spreadsheets, which takes a moment.
+When you see `Application startup complete`, the backend is ready.
+
+### 2. Start the frontend
+
+In a second terminal:
+
+```bash
 cd frontend
 npm install
-npm run dev                     # http://localhost:5173 (proxies /api to :8000)
+npm run dev
 ```
 
-`npm run build` in `frontend/` produces `frontend/dist`, which the API then serves itself at http://localhost:8000.
+### 3. Open the app
 
-### LLM modes
-| Mode | What runs |
-|---|---|
-| `live` (default) | Claude Opus 5.5 (`claude-opus-5-5`) makes every agent decision via structured outputs: each alert, triage, service request, KB score and draft. Each call is an `llm` span in the Audit trail with the context the agent collected and Claude's answer. The Guardrail stays deterministic. |
-| `rules` | Every agent uses its deterministic path. No API access needed. Used by tests and the KPI simulation. |
+Go to **http://localhost:5173** in your browser.
 
-Set `LLM_MODE` in `backend/.env`. Credentials: `ANTHROPIC_API_KEY` in `backend/.env`
-(or an `ant auth login` profile). If the key is not workspace-scoped, also set `ANTHROPIC_WORKSPACE_ID`.
+> **Port already in use?** Start the backend on another port (for example `--port 8001`), then
+> start the frontend with `API_TARGET=http://127.0.0.1:8001 npm run dev -- --port 5174`
+> (in PowerShell: `$env:API_TARGET="http://127.0.0.1:8001"; npm run dev -- --port 5174`).
 
-## Demo script (about 8 minutes)
+## AI modes
 
-| # | Page | What to do and show |
+Set `LLM_MODE` in `backend/.env`:
+
+| Mode | What happens | Needs an API key? |
 |---|---|---|
-| 1 | KPIs | The case baselines: 48 hr MTTR, 53% noise, 84% SR breach, $31M. Note the measured/modelled labels. |
-| 2 | Live feed | Start *LicenseCore P1 outage*. 53 alerts (47 LicenseCore + 6 BillingEngine) collapse into one cluster and one incident, acknowledged without a human. About 60 s of replay. |
-| 3 | Incidents | INC2001: P1, App Support L2, with the rationale. KB4022 and KB4002 are excluded for low accuracy. Escalated immediately. |
-| 4 | Guardrail queue | The auto-resolve is held: P1, Tier 0, KB below 90%, 1,800 users, plus the month-end freeze when the local date is the 28th to the 5th. Press *Approve and run*; the runbook executes and surge mode ends. |
-| 5 | Self-service | Surge mode: *Password reset* completes in under a second. *Admin access to BillingEngine* is held for approval. *Former employee* is rejected. |
-| 5b | Live feed | Start *Self-service portal: two requests* (reset the database first). The password reset is low risk: the Guardrail approves it and the agent completes it from KB4001. The admin-access request is high risk and waits on the Guardrail queue. The Audit trail shows one trace per request. |
-| 6 | Knowledge base | KB4022 scores 54%. Open the drafted update, review the diff, *Approve and publish*: 54% to 97%, and triage can now recommend it. Then approve the KB4016 update: the held P3 incident INC2002 re-triages and the runbook runs without a person (outside the 28th-5th freeze). |
-| 7 | Controls | Turn the kill switch on, then run *Self-service* again: even a password reset now waits for approval. |
-| 8 | KPIs | Before/after, labelled measured or modelled, with assumptions and unmet targets shown. |
+| `live` (default) | Claude makes each agent decision. The Guardrail still uses fixed rules. | Yes: set `ANTHROPIC_API_KEY` in `backend/.env` |
+| `rules` | Each agent uses built-in rules instead of AI. Fast and free. | No |
 
-Replay a scenario again after *Controls → Reset database*. *Incidents → Fast-forward 30 min* shows SLA-risk escalation at 50% of the window.
+**No API key? Set `LLM_MODE=rules`.** If a live call fails, the agent falls back to rules automatically.
 
-## Tests
+## Try the demo
+
+1. Start the main outage story (on Windows, type `curl.exe` instead of `curl`):
+   ```bash
+   curl -X POST http://localhost:8000/api/scenarios/licensecore_outage/start
+   ```
+   Then open **Live feed** and watch 53 alerts collapse into a single incident in about a minute.
+2. Open **Incidents** to see how the agent prioritised it and why.
+3. Open **Guardrail queue**. The risky fix is waiting for you. Press **Approve**.
+4. Open **Self-service** and try a *Password reset* (done instantly) and *Admin access* (held for approval).
+5. Open **Knowledge base**, review a drafted article update, and publish it.
+6. Open **KPIs** to compare the results with the starting figures.
+
+To run a scenario again, first press **Controls → Reset demo data**.
+
+For a full walkthrough, see the [simulation guide](docs/guides/simulation-guide.md).
+
+## Run the tests
+
 ```bash
-cd backend && .venv/bin/python -m pytest        # about 195 tests: unit, integration (API + full replay), BDD for demo items D1-D7
-cd frontend && npm run typecheck && npm run build
+cd backend
+.venv/bin/python -m pytest        # Windows: .venv\Scripts\python -m pytest
 ```
-Tests run in `LLM_MODE=rules` with a fake SDK client for the live path, so they need no network or key.
 
-## Known limits (see [implementation-plan.md](docs/planning/implementation-plan.md) §1 and §13)
-* Mock integrations only; no authentication, single worker, not load-tested.
-* The spreadsheets are random dummy data. KPI baselines are the case-study figures; each "after" value is labelled measured or modelled.
-* The 15 triage golden labels (`backend/data/golden/triage_labels.csv`) were written by the prototype team and should be reviewed by a service desk lead.
-* Simulation time follows the local clock in `Asia/Manila` (`sim` in `backend/config/settings.yaml`); scenarios start from "now" and the historic seed data is shifted so record ages match. Set `NEXA_SIM_START=2025-08-04T08:55:00` to replay on the case calendar. Tests and the KPI simulation always use the case calendar.
-* The MVP requirement check, KPI results and open gaps are in [docs/product/mvp-requirements.md](docs/product/mvp-requirements.md).
-* Application tiers, skills matrix and the freeze calendar are assumptions in `backend/config/`.
+Tests use `rules` mode, so they need no API key or internet. To check the frontend, run
+`npm run typecheck` in `frontend/`.
+
+## Good to know
+
+- **It's a prototype.** There is no login, it uses mock integrations, and it has not been load-tested.
+- **The data is fake.** The spreadsheets are random sample data. KPI "before" figures come from the case study,
+  and each "after" figure is labelled *measured* or *modelled*.
+- **Time.** The app clock follows the local time in `Asia/Manila`. To replay on the fixed case-study date, set
+  `ESM_SIM_START=2025-08-04T08:55:00` before starting the backend.
+- **Settings to tweak.** Application tiers, approval rules and the change-freeze calendar are in `backend/config/`.
+
+## Learn more
+
+- [docs/README.md](docs/README.md): index of all docs
+- [Product requirements](docs/product/prd.md)
+- [Simulation guide](docs/guides/simulation-guide.md)
+- [Known gaps and KPI results](docs/product/mvp-requirements.md)
+
+## License
+
+[MIT](LICENSE)

@@ -1,4 +1,4 @@
-"""Simulation clock. Scenarios replay on the case-study calendar at a speed multiplier."""
+"""Simulation clock. Scenarios replay from settings.sim_start() (local Asia/Manila time, or ESM_SIM_START) at a speed multiplier."""
 from __future__ import annotations
 
 import threading

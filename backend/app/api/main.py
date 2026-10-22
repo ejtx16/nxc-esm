@@ -28,14 +28,14 @@ async def lifespan(app: FastAPI):
     worker = engine.Worker()
     worker.start()
     app.state.worker = worker
-    if not os.getenv("NEXA_SKIP_KPI"):
+    if not os.getenv("ESM_SKIP_KPI"):
         from app.kpi import simulate
         simulate.ensure_results()
     yield
     worker.stop()
 
 
-app = FastAPI(title="NexaCore Agentic Ops Intelligence", version="0.1.0", lifespan=lifespan)
+app = FastAPI(title="ESM Agentic Ops", version="0.1.0", lifespan=lifespan)
 app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
                    allow_methods=["*"], allow_headers=["*"])
 for r in (core.router, ops.router, sr_kb.router, sim.router, audit.router):

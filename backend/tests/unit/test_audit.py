@@ -85,7 +85,7 @@ def test_new_tables_are_append_only(fresh):
 
 def test_redaction_masks_emails_and_truncates(monkeypatch):
     monkeypatch.setattr(audit_ctx, "cfg", lambda: {**audit_ctx.DEFAULTS, "max_payload_chars": 40})
-    out = audit_ctx.redact({"reported_by": "user_854@nexacore.com", "text": "x" * 100})
+    out = audit_ctx.redact({"reported_by": "user_854@example.com", "text": "x" * 100})
     assert "user_854" not in out and "***@***" in out and out.endswith("chars]")
 
 

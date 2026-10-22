@@ -7,8 +7,8 @@ import shutil
 import pytest
 
 os.environ["LLM_MODE"] = "rules"
-os.environ["NEXA_SKIP_KPI"] = "1"
-os.environ["NEXA_SIM_START"] = "2025-08-04T08:55:00"     # tests run on the case calendar
+os.environ["ESM_SKIP_KPI"] = "1"
+os.environ["ESM_SIM_START"] = "2025-08-04T08:55:00"     # tests run on the case calendar
 
 from app.data import db, seed  # noqa: E402
 from app.llm import client as llm  # noqa: E402

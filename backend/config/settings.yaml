@@ -26,8 +26,8 @@ kb:
   deprecated_paths:
     "LicenseCore v2 admin console": "LicenseCore v3 operations console"
     "legacy SSO gateway": "AuthService (Entra SSO)"
-    "\\\\nexa-fs01\\runbooks": "the NexaStack v4 runbook library"
-    "NexaStack v3": "NexaStack v4"
+    "\\\\ops-fs01\\runbooks": "the OpsStack v4 runbook library"
+    "OpsStack v3": "OpsStack v4"
     "Splunk classic dashboards": "Dynatrace service flow dashboards"
     "manual round-robin assignment": "skills-based routing"
 llm:

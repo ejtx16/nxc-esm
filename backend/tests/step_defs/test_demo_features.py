@@ -27,7 +27,7 @@ def ctx():
 
 
 # --- shared givens --------------------------------------------------------------------------------
-@given("the seeded NexaCore database")
+@given("the seeded demo database")
 def _seeded(fresh):
     pass
 

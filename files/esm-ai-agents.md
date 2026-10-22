@@ -1,8 +1,8 @@
-# NexaCore Systems: AI Agents for the To-Be Process
+# AI Agents for the To-Be Process
 
 ## Overview
 
-The NexaCore Systems To-Be process uses specialized AI agents across Alert Observability, Incident Management, Service Request Fulfillment, Knowledge Management, remediation, governance, orchestration, and continuous improvement.
+The To-Be process uses specialized AI agents across Alert Observability, Incident Management, Service Request Fulfillment, Knowledge Management, remediation, governance, orchestration, and continuous improvement.
 
 The recommended design contains **seven core AI agents** and **two supporting AI agents**.
 
@@ -633,7 +633,7 @@ The recommended To-Be design uses **nine AI agents**:
 8. Operations Orchestrator Agent (implemented as LangGraph routing, human queue, and P1 surge nodes)
 9. Insights and Continuous Improvement Agent (partial: KPI simulation and evals)
 
-Together, these agents transform NexaCore's operating model from disconnected and manually intensive support processes into a coordinated, governed, and progressively automated Agentic Operations process. Human intervention remains mandatory for high-risk, low-confidence, or policy-restricted actions.
+Together, these agents transform the client's operating model from disconnected and manually intensive support processes into a coordinated, governed, and progressively automated Agentic Operations process. Human intervention remains mandatory for high-risk, low-confidence, or policy-restricted actions.
 
 ---
 
@@ -657,7 +657,7 @@ The table below maps each AI agent to its primary operational domain, the busine
 
 ## Failure Dimension-to-Agent Mapping
 
-This table maps the major NexaCore failure dimensions to the agents that primarily address them.
+This table maps the major failure dimensions to the agents that primarily address them.
 
 | Failure Dimension | Primary AI Agents | How the Agents Address the Failure |
 |---|---|---|

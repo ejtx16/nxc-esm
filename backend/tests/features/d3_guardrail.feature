@@ -21,7 +21,7 @@ Feature: Guardrail prevents unsafe auto-resolution (demo item D3)
     Then the verdict is "Approve"
 
   Scenario: The kill switch forces every action through human approval
-    Given the seeded NexaCore database
+    Given the seeded demo database
     And the global kill switch is on
     When a Critical "LicenseCore" alert arrives
     Then no incident is opened autonomously

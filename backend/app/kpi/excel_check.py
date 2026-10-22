@@ -208,8 +208,8 @@ def run_check() -> dict:
 def _run_subprocess() -> None:
     from app.data import db
     out = settings.DATA_DIR / "kpi_excel_results.json"
-    env = {**os.environ, "NEXA_DB_PATH": str(settings.DATA_DIR / "kpi_excel.db"), "LLM_MODE": "rules",
-           "NEXA_SIM_START": settings.CASE_START.isoformat()}   # graded against the case calendar, not today
+    env = {**os.environ, "ESM_DB_PATH": str(settings.DATA_DIR / "kpi_excel.db"), "LLM_MODE": "rules",
+           "ESM_SIM_START": settings.CASE_START.isoformat()}   # graded against the case calendar, not today
     _status.update(running=True, started=time.time(), error=None)
     try:
         proc = subprocess.run([sys.executable, "-m", "app.kpi.excel_check", "--out", str(out)], cwd=settings.BASE_DIR,

@@ -4,7 +4,7 @@ import type { Decision } from "../api/types";
 import { agentLabel } from "./ui";
 import { feedText } from "../lib/humanize";
 
-/** The nine agents from files/next-core-ai-agents.md, plus the operator. `partial` = folded into another agent today. */
+/** The nine agents from files/esm-ai-agents.md, plus the operator. `partial` = folded into another agent today. */
 type NodeId = "you" | "orch" | "alert" | "triage" | "rca" | "sr" | "kb" | "guardrail" | "resolution" | "insights";
 const NODES: Record<NodeId, { x: number; y: number; name: string[]; partial?: boolean }> = {
   you: { x: 50, y: 85, name: ["You", "operator"] },

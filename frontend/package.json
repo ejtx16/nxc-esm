@@ -1,6 +1,7 @@
 {
-  "name": "nexacore-ops-ui",
+  "name": "esm-ops-ui",
   "private": true,
+  "license": "MIT",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
