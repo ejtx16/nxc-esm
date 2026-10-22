@@ -1,0 +1,77 @@
+# Application catalogue. Tiers are ASSUMED for the prototype (PRD open question 1).
+# tier 0 = business critical, 3 = low. depends_on drives alert correlation (AC-2).
+# users_affected is the estimated blast radius if the app is down.
+apps:
+  LicenseCore:
+    tier: 0
+    owner_team: App Support L2
+    users_affected: 1800
+    depends_on: []
+    description: Licence & renewal processing platform (1,800 agents)
+  BillingEngine:
+    tier: 0
+    owner_team: App Support L2
+    users_affected: 1200
+    depends_on: [LicenseCore]
+    description: Billing and invoicing engine
+  CustomerPortal:
+    tier: 1
+    owner_team: App Support L1
+    users_affected: 900
+    depends_on: [AuthService, APIGateway]
+    description: Customer-facing portal
+  AuthService:
+    tier: 1
+    owner_team: Security Ops
+    users_affected: 2100
+    depends_on: []
+    description: SSO / identity provider
+  APIGateway:
+    tier: 1
+    owner_team: Infra Team
+    users_affected: 1500
+    depends_on: []
+    description: API gateway and throttling
+  IntegrationHub:
+    tier: 2
+    owner_team: Infra Team
+    users_affected: 300
+    depends_on: [APIGateway]
+    description: Integration / ESB layer
+  WorkflowEngine:
+    tier: 2
+    owner_team: App Support L2
+    users_affected: 250
+    depends_on: []
+    description: Workflow and approvals engine
+  DataWarehouse:
+    tier: 2
+    owner_team: Database Team
+    users_affected: 120
+    depends_on: []
+    description: Analytics data warehouse
+  ReportingPlatform:
+    tier: 3
+    owner_team: Database Team
+    users_affected: 80
+    depends_on: [DataWarehouse]
+    description: Reporting and dashboards
+  NotificationService:
+    tier: 3
+    owner_team: App Support L1
+    users_affected: 40
+    depends_on: []
+    description: Email / push notification service
+
+# Free-text -> application hints used when an incident has no source alert.
+keywords:
+  LicenseCore: [licence, license, renewal, policy renewal, underwriting]
+  BillingEngine: [billing, payment, invoice, premium, transaction]
+  CustomerPortal: [portal, fnol, mobile app, customer onboarding, customer history]
+  AuthService: [sso, login, two-factor, 2fa, mfa, password reset, session timeout, role change]
+  APIGateway: [api integration, gateway, throttl]
+  IntegrationHub: [integration, crm, bulk import, broker data]
+  WorkflowEngine: [workflow, change management, auto-closing, onboarding workflow]
+  DataWarehouse: [dashboard, data migration, kpi, discrepancy]
+  ReportingPlatform: [report generation, pdf generation, report]
+  NotificationService: [notification, push, email]

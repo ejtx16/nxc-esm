@@ -1,0 +1,39 @@
+# Guardrail decision policy (PRD §7 / GR-3). Configuration, not code; versioned.
+version: 1
+
+# Non-mutating coordination actions. Always logged; subject only to the kill switch.
+pass_through_actions: [acknowledge, open_incident, classify, route, attach_kb, escalate, route_to_human, hold_reassignment]
+# Never autonomous.
+always_human_actions: [update_kb_article, manual_review]
+
+approve_only_if:
+  min_confidence: 0.85
+  allowed_priorities: [P3, P4]
+  max_app_tier_blocked: 1        # tiers 0 and 1 need a human
+  require_reversible: true
+  respect_freeze_windows: true
+  min_kb_accuracy: 90
+  max_blast_radius_users: 50
+  max_reopen_rate_pct: 5
+  block_privileged_access: true
+  never_suppress_severities: [Critical]
+
+# Which gated actions each rule applies to (omitted = every gated action).
+rule_scope:
+  allowed_priorities: [resolve, remediate]
+  max_app_tier_blocked: [resolve, remediate]
+  respect_freeze_windows: [resolve, remediate]
+  min_kb_accuracy: [resolve, remediate]
+  max_blast_radius_users: [resolve, remediate, reset_password, grant_access]
+  block_privileged_access: [grant_access]
+  never_suppress_severities: [suppress]
+
+on_fail: require_human_approval
+block_if:
+  - irreversible_on_tier_0
+
+history_window_days: 30
+freeze_windows:
+  - name: month_end_billing
+    # Billing close: the Aug 04 outage (case study) happened inside this window.
+    days_of_month: [28, 29, 30, 31, 1, 2, 3, 4, 5]

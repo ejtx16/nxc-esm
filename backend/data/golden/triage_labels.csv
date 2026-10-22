@@ -1,0 +1,16 @@
+description,category,priority,app_id
+Application throws 500 error on login page after deployment,Application Error,P2,AuthService
+Claims processing module running 3x slower than baseline,Performance Degradation,P3,
+User unable to access PolicyAdmin portal after role change,Access Issue,P3,AuthService
+API integration between CRM and Claims system timing out,Integration Failure,P2,IntegrationHub
+Customer premium balance mismatch between portal and core system,Data Discrepancy,P3,BillingEngine
+Batch job for nightly policy renewal failing silently,Application Error,P2,LicenseCore
+Search module returning stale results after cache flush,Data Discrepancy,P3,
+Payment gateway returning duplicate transaction references,Data Discrepancy,P2,BillingEngine
+Password reset emails not being delivered to customers,Application Error,P3,NotificationService
+Report generation module timing out for large date ranges,Performance Degradation,P3,ReportingPlatform
+Session timeout occurring after 2 mins instead of 30 mins,Access Issue,P3,AuthService
+SSO login failing for users in EMEA region after cert renewal,Access Issue,P2,AuthService
+Mobile app push notifications delayed by up to 6 hours,Performance Degradation,P3,NotificationService
+Real-time fraud alert not firing for flagged transactions,Application Error,P2,BillingEngine
+FNOL submission portal down for mobile users,Application Error,P1,CustomerPortal

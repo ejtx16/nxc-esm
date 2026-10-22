@@ -1,0 +1,22 @@
+# Triage taxonomy and rule keywords (IT-1). Rules path only; the LLM path sees the same taxonomy.
+categories:
+  Application Error:
+    keywords: [error, exception, null pointer, throws, failing silently, not triggering, not auto-closing, not firing, stuck, down, not loading, health check, error rate, batch job failure, "500", not being delivered]
+  Data Discrepancy:
+    keywords: [mismatch, incorrect, stale, out-of-range, duplicate, discrepancy, encoding, wrong]
+  Access Issue:
+    keywords: [unable to access, access, role change, sso, login, two-factor, 2fa, mfa, password, session timeout, permission, certificate]
+  Performance Degradation:
+    keywords: [slower, slow, timing out, timeout, delayed, latency, degraded, cpu, memory, response time, queue depth, cache hit rate, connection pool, disk usage]
+  Integration Failure:
+    keywords: [integration, api, crm, gateway, bulk import, sync, upstream, downstream]
+
+priority_keywords:
+  P1: [outage, down, unavailable, all users, cannot process, health check failed]
+  P2: [failing, unable, timing out, not firing, not triggering, stuck, error, "500"]
+  P3: [slower, delayed, incorrect, mismatch, stale, intermittent, duplicate, timeout, out-of-range]
+  P4: [cosmetic, minor, request, enhancement]
+
+# Severity of the source alert cluster -> base priority, then bumped by app tier.
+severity_priority: {Critical: P2, High: P3, Medium: P4, Low: P4}
+tier_bump: {0: 1, 1: 1, 2: 0, 3: 0}   # number of priority levels to raise

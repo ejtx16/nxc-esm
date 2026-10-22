@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.env
+backend/data/*.db
+backend/data/*.db-*
+backend/data/*.json
+node_modules/
+frontend/dist/
+.playwright-cli
+.DS_Store
+docs/*
+.claude
+.agents
+/skills-lock.json
+.vscode

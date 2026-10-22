@@ -1,0 +1,28 @@
+# Skills matrix for the 5 teams seen in the incident log (IT-3). Seeded config for the prototype.
+# Score = 3*category + 2*app + 1*priority fit; ties broken by lowest open workload.
+teams:
+  - name: App Support L1
+    categories: [Application Error, Access Issue, Data Discrepancy]
+    apps: [CustomerPortal, NotificationService, ReportingPlatform]
+    priorities: [P3, P4]
+    capacity: 10
+  - name: App Support L2
+    categories: [Application Error, Integration Failure, Performance Degradation, Data Discrepancy]
+    apps: [LicenseCore, BillingEngine, WorkflowEngine, CustomerPortal]
+    priorities: [P1, P2, P3]
+    capacity: 8
+  - name: Database Team
+    categories: [Data Discrepancy, Performance Degradation]
+    apps: [DataWarehouse, ReportingPlatform, BillingEngine]
+    priorities: [P1, P2, P3]
+    capacity: 6
+  - name: Infra Team
+    categories: [Performance Degradation, Integration Failure]
+    apps: [APIGateway, IntegrationHub, LicenseCore]
+    priorities: [P1, P2, P3, P4]
+    capacity: 6
+  - name: Security Ops
+    categories: [Access Issue]
+    apps: [AuthService]
+    priorities: [P1, P2, P3, P4]
+    capacity: 5

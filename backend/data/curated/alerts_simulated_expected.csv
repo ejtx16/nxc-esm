@@ -1,0 +1,301 @@
+id,alert_ts,source_system,alert_name,severity,self_recovered,excel_label,expected_noise,changed,reason
+SIM5001,2025-02-03 00:00,LicenseCore,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5002,2025-02-03 00:24,ReportingPlatform,Error rate > 5% in 5 min,Medium,N,,N,N,simulated
+SIM5003,2025-02-03 00:52,DataWarehouse,Failed login attempts > 50/min,Critical,Y,,Y,N,simulated
+SIM5004,2025-02-03 01:01,BillingEngine,CPU utilization > 90%,Medium,Y,,Y,N,simulated
+SIM5005,2025-02-03 01:29,LicenseCore,Error rate > 5% in 5 min,Medium,N,,Y,N,simulated (pattern-breaking)
+SIM5006,2025-02-03 01:59,IntegrationHub,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5007,2025-02-03 02:00,IntegrationHub,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5008,2025-02-03 02:19,NotificationService,Disk usage > 85%,Critical,N,,Y,N,simulated (pattern-breaking)
+SIM5009,2025-02-03 02:20,NotificationService,Disk usage > 85%,Critical,N,,Y,N,simulated (pattern-breaking)
+SIM5010,2025-02-03 02:21,NotificationService,Disk usage > 85%,Critical,N,,Y,N,simulated (pattern-breaking)
+SIM5011,2025-02-03 02:40,BillingEngine,Batch job failure,High,N,,Y,N,simulated
+SIM5012,2025-02-03 02:52,ReportingPlatform,Error rate > 5% in 5 min,Low,N,,Y,N,simulated (pattern-breaking)
+SIM5013,2025-02-03 03:04,BillingEngine,API response time > 5s,High,N,,N,N,simulated
+SIM5014,2025-02-03 03:30,APIGateway,DB connection pool exhausted,Low,Y,,Y,N,simulated
+SIM5015,2025-02-03 03:44,AuthService,Failed login attempts > 50/min,Medium,Y,,N,N,simulated (pattern-breaking)
+SIM5016,2025-02-03 04:12,APIGateway,CPU utilization > 90%,Medium,Y,,Y,N,simulated
+SIM5017,2025-02-03 04:13,APIGateway,CPU utilization > 90%,Medium,Y,,Y,N,simulated
+SIM5018,2025-02-03 04:14,APIGateway,CPU utilization > 90%,Medium,Y,,Y,N,simulated
+SIM5019,2025-02-03 04:25,WorkflowEngine,Disk usage > 85%,Medium,N,,N,N,simulated
+SIM5020,2025-02-03 04:50,IntegrationHub,Failed login attempts > 50/min,High,Y,,Y,N,simulated
+SIM5021,2025-02-03 04:51,IntegrationHub,Failed login attempts > 50/min,High,Y,,Y,N,simulated
+SIM5022,2025-02-03 05:05,IntegrationHub,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5023,2025-02-03 05:15,BillingEngine,Failed login attempts > 50/min,Medium,N,,Y,N,simulated
+SIM5024,2025-02-03 05:25,IntegrationHub,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5025,2025-02-03 05:26,IntegrationHub,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5026,2025-02-03 05:37,LicenseCore,Disk usage > 85%,Critical,Y,,N,N,simulated
+SIM5027,2025-02-03 05:45,LicenseCore,Disk usage > 85%,High,Y,,N,N,simulated
+SIM5028,2025-02-03 06:02,DataWarehouse,Service health check failed,Low,Y,,Y,N,simulated
+SIM5029,2025-02-03 06:20,LicenseCore,"Queue depth > 10,000",High,N,,Y,N,simulated
+SIM5030,2025-02-03 06:47,ReportingPlatform,Disk usage > 85%,Low,N,,N,N,simulated
+SIM5031,2025-02-03 07:08,LicenseCore,API response time > 5s,Critical,N,,N,N,simulated
+SIM5032,2025-02-03 07:32,DataWarehouse,CPU utilization > 90%,Medium,Y,,Y,N,simulated
+SIM5033,2025-02-03 07:33,DataWarehouse,CPU utilization > 90%,Medium,Y,,Y,N,simulated
+SIM5034,2025-02-03 07:34,DataWarehouse,CPU utilization > 90%,Medium,Y,,Y,N,simulated
+SIM5035,2025-02-03 07:48,LicenseCore,Cache hit rate dropped below 40%,Medium,N,,N,N,simulated
+SIM5036,2025-02-03 08:10,WorkflowEngine,API response time > 5s,High,N,,N,N,simulated
+SIM5037,2025-02-03 08:24,ReportingPlatform,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5038,2025-02-03 08:33,LicenseCore,Memory usage spike,High,N,,N,N,simulated
+SIM5039,2025-02-03 08:54,CustomerPortal,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5040,2025-02-03 09:03,IntegrationHub,DB connection pool exhausted,High,Y,,Y,N,simulated
+SIM5041,2025-02-03 09:23,BillingEngine,Failed login attempts > 50/min,High,Y,,N,N,simulated (pattern-breaking)
+SIM5042,2025-02-03 09:45,BillingEngine,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5043,2025-02-03 09:46,BillingEngine,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5044,2025-02-03 09:58,AuthService,API response time > 5s,High,N,,N,N,simulated
+SIM5045,2025-02-03 10:22,DataWarehouse,Memory usage spike,Medium,N,,N,N,simulated
+SIM5046,2025-02-03 10:42,AuthService,CPU utilization > 90%,Medium,N,,Y,N,simulated
+SIM5047,2025-02-03 10:43,AuthService,CPU utilization > 90%,Medium,N,,Y,N,simulated
+SIM5048,2025-02-03 11:04,CustomerPortal,Service health check failed,Low,Y,,Y,N,simulated
+SIM5049,2025-02-03 11:24,AuthService,API response time > 5s,High,N,,N,N,simulated
+SIM5050,2025-02-03 11:43,BillingEngine,Service health check failed,Medium,Y,,N,N,simulated (pattern-breaking)
+SIM5051,2025-02-03 11:53,APIGateway,CPU utilization > 90%,Medium,N,,N,N,simulated (pattern-breaking)
+SIM5052,2025-02-03 12:17,NotificationService,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5053,2025-02-03 12:41,LicenseCore,API response time > 5s,High,N,,N,N,simulated
+SIM5054,2025-02-03 13:10,CustomerPortal,SSL certificate expiring in 7 days,Critical,N,,N,N,simulated
+SIM5055,2025-02-03 13:36,AuthService,Error rate > 5% in 5 min,Medium,Y,,N,N,simulated
+SIM5056,2025-02-03 13:56,ReportingPlatform,API response time > 5s,Medium,N,,N,N,simulated
+SIM5057,2025-02-03 14:16,DataWarehouse,Service health check failed,Low,Y,,Y,N,simulated
+SIM5058,2025-02-03 14:17,DataWarehouse,Service health check failed,Low,Y,,Y,N,simulated
+SIM5059,2025-02-03 14:27,DataWarehouse,Failed login attempts > 50/min,Critical,Y,,Y,N,simulated
+SIM5060,2025-02-03 14:35,ReportingPlatform,Cache hit rate dropped below 40%,High,N,,N,N,simulated
+SIM5061,2025-02-03 14:59,BillingEngine,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5062,2025-02-03 15:26,IntegrationHub,"Queue depth > 10,000",Medium,Y,,Y,N,simulated
+SIM5063,2025-02-03 15:41,WorkflowEngine,API response time > 5s,High,N,,N,N,simulated
+SIM5064,2025-02-03 15:55,AuthService,Disk usage > 85%,High,N,,N,N,simulated
+SIM5065,2025-02-03 16:16,CustomerPortal,Disk usage > 85%,Medium,N,,N,N,simulated
+SIM5066,2025-02-03 16:35,CustomerPortal,Error rate > 5% in 5 min,Medium,N,,N,N,simulated
+SIM5067,2025-02-03 16:49,WorkflowEngine,API response time > 5s,Low,N,,N,N,simulated
+SIM5068,2025-02-03 17:03,NotificationService,Failed login attempts > 50/min,High,Y,,Y,N,simulated
+SIM5069,2025-02-03 17:04,NotificationService,Failed login attempts > 50/min,High,Y,,Y,N,simulated
+SIM5070,2025-02-03 17:05,NotificationService,Failed login attempts > 50/min,High,Y,,Y,N,simulated
+SIM5071,2025-02-03 17:13,LicenseCore,Error rate > 5% in 5 min,High,Y,,N,N,simulated
+SIM5072,2025-02-03 17:43,IntegrationHub,Service health check failed,Medium,Y,,Y,N,simulated
+SIM5073,2025-02-03 18:07,APIGateway,API response time > 5s,Medium,N,,N,N,simulated
+SIM5074,2025-02-03 18:33,BillingEngine,API response time > 5s,Critical,N,,N,N,simulated
+SIM5075,2025-02-03 18:46,DataWarehouse,Cache hit rate dropped below 40%,Critical,N,,N,N,simulated
+SIM5076,2025-02-03 19:06,BillingEngine,"Queue depth > 10,000",High,N,,Y,N,simulated
+SIM5077,2025-02-03 19:21,IntegrationHub,Failed login attempts > 50/min,Low,Y,,Y,N,simulated
+SIM5078,2025-02-03 19:22,IntegrationHub,Failed login attempts > 50/min,Low,Y,,Y,N,simulated
+SIM5079,2025-02-03 19:23,IntegrationHub,Failed login attempts > 50/min,Low,Y,,Y,N,simulated
+SIM5080,2025-02-03 19:49,ReportingPlatform,Disk usage > 85%,High,N,,Y,N,simulated (pattern-breaking)
+SIM5081,2025-02-03 19:50,ReportingPlatform,Disk usage > 85%,High,N,,Y,N,simulated (pattern-breaking)
+SIM5082,2025-02-03 19:51,ReportingPlatform,Disk usage > 85%,High,N,,Y,N,simulated (pattern-breaking)
+SIM5083,2025-02-03 20:09,AuthService,Memory usage spike,Critical,N,,N,N,simulated
+SIM5084,2025-02-03 20:34,DataWarehouse,API response time > 5s,High,Y,,N,N,simulated
+SIM5085,2025-02-03 21:01,IntegrationHub,SSL certificate expiring in 7 days,High,N,,N,N,simulated
+SIM5086,2025-02-03 21:26,IntegrationHub,CPU utilization > 90%,Critical,Y,,N,N,simulated (pattern-breaking)
+SIM5087,2025-02-03 21:43,CustomerPortal,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5088,2025-02-03 22:09,APIGateway,DB connection pool exhausted,High,Y,,Y,N,simulated
+SIM5089,2025-02-03 22:10,APIGateway,DB connection pool exhausted,High,Y,,Y,N,simulated
+SIM5090,2025-02-03 22:19,CustomerPortal,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5091,2025-02-03 22:41,BillingEngine,Batch job failure,Low,Y,,Y,N,simulated
+SIM5092,2025-02-03 23:00,LicenseCore,Memory usage spike,High,N,,N,N,simulated
+SIM5093,2025-02-03 23:21,BillingEngine,Failed login attempts > 50/min,High,Y,,Y,N,simulated
+SIM5094,2025-02-03 23:22,BillingEngine,Failed login attempts > 50/min,High,Y,,Y,N,simulated
+SIM5095,2025-02-03 23:45,LicenseCore,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5096,2025-02-04 00:00,NotificationService,Failed login attempts > 50/min,Critical,Y,,Y,N,simulated
+SIM5097,2025-02-04 00:01,NotificationService,Failed login attempts > 50/min,Critical,Y,,Y,N,simulated
+SIM5098,2025-02-04 00:16,ReportingPlatform,Disk usage > 85%,Medium,N,,N,N,simulated
+SIM5099,2025-02-04 00:41,IntegrationHub,CPU utilization > 90%,Medium,Y,,Y,N,simulated
+SIM5100,2025-02-04 00:52,LicenseCore,Cache hit rate dropped below 40%,Critical,N,,N,N,simulated
+SIM5101,2025-02-04 01:04,IntegrationHub,DB connection pool exhausted,Critical,N,,Y,N,simulated
+SIM5102,2025-02-04 01:05,IntegrationHub,DB connection pool exhausted,Critical,N,,Y,N,simulated
+SIM5103,2025-02-04 01:06,IntegrationHub,DB connection pool exhausted,Critical,N,,Y,N,simulated
+SIM5104,2025-02-04 01:32,ReportingPlatform,Error rate > 5% in 5 min,Critical,N,,Y,N,simulated (pattern-breaking)
+SIM5105,2025-02-04 01:33,ReportingPlatform,Error rate > 5% in 5 min,Critical,N,,Y,N,simulated (pattern-breaking)
+SIM5106,2025-02-04 01:34,ReportingPlatform,Error rate > 5% in 5 min,Critical,N,,Y,N,simulated (pattern-breaking)
+SIM5107,2025-02-04 01:49,WorkflowEngine,DB connection pool exhausted,Low,Y,,N,N,simulated (pattern-breaking)
+SIM5108,2025-02-04 02:19,BillingEngine,Service health check failed,Low,Y,,Y,N,simulated
+SIM5109,2025-02-04 02:20,BillingEngine,Service health check failed,Low,Y,,Y,N,simulated
+SIM5110,2025-02-04 02:21,BillingEngine,Service health check failed,Low,Y,,Y,N,simulated
+SIM5111,2025-02-04 02:45,LicenseCore,SSL certificate expiring in 7 days,Critical,N,,N,N,simulated
+SIM5112,2025-02-04 03:00,AuthService,Memory usage spike,Critical,N,,N,N,simulated
+SIM5113,2025-02-04 03:20,AuthService,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5114,2025-02-04 03:33,BillingEngine,CPU utilization > 90%,High,Y,,Y,N,simulated
+SIM5115,2025-02-04 03:34,BillingEngine,CPU utilization > 90%,High,Y,,Y,N,simulated
+SIM5116,2025-02-04 03:41,CustomerPortal,Disk usage > 85%,Low,N,,N,N,simulated
+SIM5117,2025-02-04 03:52,DataWarehouse,DB connection pool exhausted,Medium,Y,,N,N,simulated (pattern-breaking)
+SIM5118,2025-02-04 04:07,AuthService,API response time > 5s,High,N,,N,N,simulated
+SIM5119,2025-02-04 04:19,NotificationService,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5120,2025-02-04 04:48,LicenseCore,Error rate > 5% in 5 min,High,Y,,Y,N,simulated (pattern-breaking)
+SIM5121,2025-02-04 04:49,LicenseCore,Error rate > 5% in 5 min,High,Y,,Y,N,simulated (pattern-breaking)
+SIM5122,2025-02-04 05:18,BillingEngine,Disk usage > 85%,Critical,N,,Y,N,simulated (pattern-breaking)
+SIM5123,2025-02-04 05:36,ReportingPlatform,Batch job failure,Low,Y,,Y,N,simulated
+SIM5124,2025-02-04 05:49,CustomerPortal,Memory usage spike,Low,N,,N,N,simulated
+SIM5125,2025-02-04 06:08,BillingEngine,Failed login attempts > 50/min,High,Y,,Y,N,simulated
+SIM5126,2025-02-04 06:25,IntegrationHub,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5127,2025-02-04 06:54,ReportingPlatform,SSL certificate expiring in 7 days,High,N,,N,N,simulated
+SIM5128,2025-02-04 07:14,ReportingPlatform,API response time > 5s,Critical,N,,N,N,simulated
+SIM5129,2025-02-04 07:37,NotificationService,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5130,2025-02-04 07:49,APIGateway,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5131,2025-02-04 08:15,CustomerPortal,Failed login attempts > 50/min,High,Y,,N,N,simulated (pattern-breaking)
+SIM5132,2025-02-04 08:45,CustomerPortal,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5133,2025-02-04 08:53,CustomerPortal,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5134,2025-02-04 09:17,LicenseCore,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5135,2025-02-04 09:46,AuthService,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5136,2025-02-04 09:57,BillingEngine,CPU utilization > 90%,Medium,Y,,N,N,simulated (pattern-breaking)
+SIM5137,2025-02-04 10:05,BillingEngine,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5138,2025-02-04 10:22,ReportingPlatform,Memory usage spike,High,N,,N,N,simulated
+SIM5139,2025-02-04 10:39,CustomerPortal,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5140,2025-02-04 10:50,BillingEngine,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5141,2025-02-04 11:05,IntegrationHub,"Queue depth > 10,000",Medium,N,,Y,N,simulated
+SIM5142,2025-02-04 11:33,APIGateway,DB connection pool exhausted,High,Y,,Y,N,simulated
+SIM5143,2025-02-04 11:34,APIGateway,DB connection pool exhausted,High,Y,,Y,N,simulated
+SIM5144,2025-02-04 11:48,AuthService,Error rate > 5% in 5 min,Low,N,,N,N,simulated
+SIM5145,2025-02-04 12:08,DataWarehouse,Failed login attempts > 50/min,Low,Y,,Y,N,simulated
+SIM5146,2025-02-04 12:09,DataWarehouse,Failed login attempts > 50/min,Low,Y,,Y,N,simulated
+SIM5147,2025-02-04 12:33,BillingEngine,Service health check failed,Medium,N,,Y,N,simulated
+SIM5148,2025-02-04 12:59,AuthService,Error rate > 5% in 5 min,Medium,N,,N,N,simulated
+SIM5149,2025-02-04 13:17,LicenseCore,DB connection pool exhausted,Low,Y,,Y,N,simulated
+SIM5150,2025-02-04 13:42,IntegrationHub,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5151,2025-02-04 13:50,DataWarehouse,Failed login attempts > 50/min,Low,Y,,Y,N,simulated
+SIM5152,2025-02-04 14:12,WorkflowEngine,Batch job failure,Critical,Y,,Y,N,simulated
+SIM5153,2025-02-04 14:13,WorkflowEngine,Batch job failure,Critical,Y,,Y,N,simulated
+SIM5154,2025-02-04 14:14,WorkflowEngine,Batch job failure,Critical,Y,,Y,N,simulated
+SIM5155,2025-02-04 14:39,LicenseCore,Disk usage > 85%,Low,N,,N,N,simulated
+SIM5156,2025-02-04 15:05,NotificationService,Disk usage > 85%,Medium,N,,N,N,simulated
+SIM5157,2025-02-04 15:34,AuthService,API response time > 5s,High,N,,N,N,simulated
+SIM5158,2025-02-04 16:00,APIGateway,API response time > 5s,High,N,,N,N,simulated
+SIM5159,2025-02-04 16:21,LicenseCore,Error rate > 5% in 5 min,Critical,Y,,Y,N,simulated (pattern-breaking)
+SIM5160,2025-02-04 16:38,CustomerPortal,Memory usage spike,Critical,N,,N,N,simulated
+SIM5161,2025-02-04 16:48,NotificationService,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5162,2025-02-04 17:13,APIGateway,Service health check failed,Low,Y,,Y,N,simulated
+SIM5163,2025-02-04 17:14,APIGateway,Service health check failed,Low,Y,,Y,N,simulated
+SIM5164,2025-02-04 17:15,APIGateway,Service health check failed,Low,Y,,Y,N,simulated
+SIM5165,2025-02-04 17:39,NotificationService,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5166,2025-02-04 17:50,WorkflowEngine,Disk usage > 85%,High,N,,N,N,simulated
+SIM5167,2025-02-04 18:12,LicenseCore,Disk usage > 85%,High,Y,,N,N,simulated
+SIM5168,2025-02-04 18:30,LicenseCore,Failed login attempts > 50/min,Critical,Y,,Y,N,simulated
+SIM5169,2025-02-04 18:44,DataWarehouse,DB connection pool exhausted,High,Y,,Y,N,simulated
+SIM5170,2025-02-04 18:58,CustomerPortal,SSL certificate expiring in 7 days,Critical,N,,N,N,simulated
+SIM5171,2025-02-04 19:19,IntegrationHub,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5172,2025-02-04 19:36,IntegrationHub,Batch job failure,Low,Y,,Y,N,simulated
+SIM5173,2025-02-04 20:02,AuthService,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5174,2025-02-04 20:24,ReportingPlatform,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5175,2025-02-04 20:40,BillingEngine,Disk usage > 85%,Medium,N,,N,N,simulated
+SIM5176,2025-02-04 20:48,IntegrationHub,DB connection pool exhausted,Critical,Y,,Y,N,simulated
+SIM5177,2025-02-04 20:49,IntegrationHub,DB connection pool exhausted,Critical,Y,,Y,N,simulated
+SIM5178,2025-02-04 20:50,IntegrationHub,DB connection pool exhausted,Critical,Y,,Y,N,simulated
+SIM5179,2025-02-04 20:57,DataWarehouse,"Queue depth > 10,000",Medium,Y,,Y,N,simulated
+SIM5180,2025-02-04 21:24,LicenseCore,Cache hit rate dropped below 40%,High,N,,N,N,simulated
+SIM5181,2025-02-04 21:39,BillingEngine,Failed login attempts > 50/min,High,N,,Y,N,simulated
+SIM5182,2025-02-04 22:05,WorkflowEngine,API response time > 5s,High,N,,N,N,simulated
+SIM5183,2025-02-04 22:21,DataWarehouse,CPU utilization > 90%,Low,Y,,N,N,simulated (pattern-breaking)
+SIM5184,2025-02-04 22:48,DataWarehouse,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5185,2025-02-04 22:49,DataWarehouse,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5186,2025-02-04 22:50,DataWarehouse,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5187,2025-02-04 22:58,LicenseCore,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5188,2025-02-04 23:20,APIGateway,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5189,2025-02-04 23:32,LicenseCore,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5190,2025-02-04 23:57,APIGateway,DB connection pool exhausted,Low,Y,,Y,N,simulated
+SIM5191,2025-02-05 00:14,APIGateway,Batch job failure,Low,Y,,Y,N,simulated
+SIM5192,2025-02-05 00:23,IntegrationHub,Service health check failed,Critical,N,,Y,N,simulated
+SIM5193,2025-02-05 00:45,ReportingPlatform,Error rate > 5% in 5 min,Medium,N,,N,N,simulated
+SIM5194,2025-02-05 01:10,CustomerPortal,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5195,2025-02-05 01:38,ReportingPlatform,Cache hit rate dropped below 40%,Medium,N,,N,N,simulated
+SIM5196,2025-02-05 01:54,LicenseCore,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5197,2025-02-05 02:05,DataWarehouse,DB connection pool exhausted,Critical,N,,Y,N,simulated
+SIM5198,2025-02-05 02:23,AuthService,API response time > 5s,Critical,N,,N,N,simulated
+SIM5199,2025-02-05 02:40,LicenseCore,Disk usage > 85%,Low,N,,N,N,simulated
+SIM5200,2025-02-05 03:01,AuthService,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5201,2025-02-05 03:15,LicenseCore,Memory usage spike,High,N,,N,N,simulated
+SIM5202,2025-02-05 03:34,DataWarehouse,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5203,2025-02-05 03:35,DataWarehouse,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5204,2025-02-05 04:03,WorkflowEngine,SSL certificate expiring in 7 days,Medium,N,,N,N,simulated
+SIM5205,2025-02-05 04:18,LicenseCore,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5206,2025-02-05 04:35,LicenseCore,Disk usage > 85%,Medium,N,,N,N,simulated
+SIM5207,2025-02-05 04:50,IntegrationHub,Memory usage spike,Critical,N,,N,N,simulated
+SIM5208,2025-02-05 05:07,BillingEngine,Batch job failure,Medium,Y,,N,N,simulated (pattern-breaking)
+SIM5209,2025-02-05 05:30,BillingEngine,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5210,2025-02-05 05:49,LicenseCore,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5211,2025-02-05 06:08,BillingEngine,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5212,2025-02-05 06:24,AuthService,"Queue depth > 10,000",Medium,Y,,Y,N,simulated
+SIM5213,2025-02-05 06:25,AuthService,"Queue depth > 10,000",Medium,Y,,Y,N,simulated
+SIM5214,2025-02-05 06:41,AuthService,Memory usage spike,Low,N,,N,N,simulated
+SIM5215,2025-02-05 07:05,IntegrationHub,DB connection pool exhausted,Medium,Y,,Y,N,simulated
+SIM5216,2025-02-05 07:06,IntegrationHub,DB connection pool exhausted,Medium,Y,,Y,N,simulated
+SIM5217,2025-02-05 07:21,DataWarehouse,DB connection pool exhausted,Low,N,,Y,N,simulated
+SIM5218,2025-02-05 07:34,IntegrationHub,Batch job failure,High,Y,,Y,N,simulated
+SIM5219,2025-02-05 07:35,IntegrationHub,Batch job failure,High,Y,,Y,N,simulated
+SIM5220,2025-02-05 07:36,IntegrationHub,Batch job failure,High,Y,,Y,N,simulated
+SIM5221,2025-02-05 07:49,DataWarehouse,API response time > 5s,Critical,N,,N,N,simulated
+SIM5222,2025-02-05 08:00,WorkflowEngine,Disk usage > 85%,Critical,N,,N,N,simulated
+SIM5223,2025-02-05 08:21,DataWarehouse,Batch job failure,Low,Y,,N,N,simulated (pattern-breaking)
+SIM5224,2025-02-05 08:37,AuthService,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5225,2025-02-05 08:38,AuthService,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5226,2025-02-05 08:39,AuthService,CPU utilization > 90%,Low,Y,,Y,N,simulated
+SIM5227,2025-02-05 09:05,BillingEngine,Memory usage spike,Critical,N,,N,N,simulated
+SIM5228,2025-02-05 09:20,CustomerPortal,API response time > 5s,High,N,,N,N,simulated
+SIM5229,2025-02-05 09:36,APIGateway,Disk usage > 85%,High,N,,N,N,simulated
+SIM5230,2025-02-05 09:47,CustomerPortal,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5231,2025-02-05 10:12,NotificationService,Error rate > 5% in 5 min,Low,N,,N,N,simulated
+SIM5232,2025-02-05 10:39,AuthService,Memory usage spike,High,N,,N,N,simulated
+SIM5233,2025-02-05 11:01,LicenseCore,Disk usage > 85%,Critical,N,,Y,N,simulated (pattern-breaking)
+SIM5234,2025-02-05 11:17,AuthService,Error rate > 5% in 5 min,Critical,N,,N,N,simulated
+SIM5235,2025-02-05 11:33,WorkflowEngine,Disk usage > 85%,Low,N,,N,N,simulated
+SIM5236,2025-02-05 11:45,LicenseCore,API response time > 5s,Critical,N,,N,N,simulated
+SIM5237,2025-02-05 11:54,BillingEngine,Batch job failure,High,Y,,Y,N,simulated
+SIM5238,2025-02-05 11:55,BillingEngine,Batch job failure,High,Y,,Y,N,simulated
+SIM5239,2025-02-05 11:56,BillingEngine,Batch job failure,High,Y,,Y,N,simulated
+SIM5240,2025-02-05 12:20,ReportingPlatform,Disk usage > 85%,Medium,Y,,N,N,simulated
+SIM5241,2025-02-05 12:39,APIGateway,Failed login attempts > 50/min,Low,Y,,Y,N,simulated
+SIM5242,2025-02-05 12:40,APIGateway,Failed login attempts > 50/min,Low,Y,,Y,N,simulated
+SIM5243,2025-02-05 12:54,DataWarehouse,Cache hit rate dropped below 40%,High,N,,N,N,simulated
+SIM5244,2025-02-05 13:05,NotificationService,Error rate > 5% in 5 min,Critical,Y,,N,N,simulated
+SIM5245,2025-02-05 13:17,DataWarehouse,Batch job failure,Medium,Y,,Y,N,simulated
+SIM5246,2025-02-05 13:18,DataWarehouse,Batch job failure,Medium,Y,,Y,N,simulated
+SIM5247,2025-02-05 13:34,IntegrationHub,DB connection pool exhausted,Low,Y,,Y,N,simulated
+SIM5248,2025-02-05 13:59,IntegrationHub,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5249,2025-02-05 14:00,IntegrationHub,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5250,2025-02-05 14:01,IntegrationHub,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5251,2025-02-05 14:23,DataWarehouse,Disk usage > 85%,Critical,N,,Y,N,simulated (pattern-breaking)
+SIM5252,2025-02-05 14:49,AuthService,Batch job failure,Medium,Y,,Y,N,simulated
+SIM5253,2025-02-05 15:05,CustomerPortal,CPU utilization > 90%,Critical,Y,,Y,N,simulated
+SIM5254,2025-02-05 15:06,CustomerPortal,CPU utilization > 90%,Critical,Y,,Y,N,simulated
+SIM5255,2025-02-05 15:07,CustomerPortal,CPU utilization > 90%,Critical,Y,,Y,N,simulated
+SIM5256,2025-02-05 15:33,DataWarehouse,Batch job failure,Medium,N,,Y,N,simulated
+SIM5257,2025-02-05 15:44,LicenseCore,Memory usage spike,High,N,,N,N,simulated
+SIM5258,2025-02-05 16:11,IntegrationHub,Batch job failure,Critical,Y,,N,N,simulated (pattern-breaking)
+SIM5259,2025-02-05 16:20,DataWarehouse,Memory usage spike,High,N,,N,N,simulated
+SIM5260,2025-02-05 16:45,IntegrationHub,Memory usage spike,Medium,N,,N,N,simulated
+SIM5261,2025-02-05 17:13,AuthService,Memory usage spike,Medium,N,,N,N,simulated
+SIM5262,2025-02-05 17:22,LicenseCore,API response time > 5s,Critical,N,,N,N,simulated
+SIM5263,2025-02-05 17:38,CustomerPortal,API response time > 5s,Medium,Y,,N,N,simulated
+SIM5264,2025-02-05 18:01,DataWarehouse,Disk usage > 85%,High,N,,N,N,simulated
+SIM5265,2025-02-05 18:12,BillingEngine,Batch job failure,Critical,Y,,Y,N,simulated
+SIM5266,2025-02-05 18:41,BillingEngine,Error rate > 5% in 5 min,Low,N,,N,N,simulated
+SIM5267,2025-02-05 18:55,DataWarehouse,API response time > 5s,High,N,,N,N,simulated
+SIM5268,2025-02-05 19:24,WorkflowEngine,Error rate > 5% in 5 min,Medium,N,,N,N,simulated
+SIM5269,2025-02-05 19:35,BillingEngine,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5270,2025-02-05 19:36,BillingEngine,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5271,2025-02-05 19:52,AuthService,Error rate > 5% in 5 min,Low,N,,N,N,simulated
+SIM5272,2025-02-05 20:04,AuthService,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5273,2025-02-05 20:21,IntegrationHub,Failed login attempts > 50/min,Medium,Y,,N,N,simulated (pattern-breaking)
+SIM5274,2025-02-05 20:36,IntegrationHub,Service health check failed,Medium,Y,,N,N,simulated (pattern-breaking)
+SIM5275,2025-02-05 21:06,DataWarehouse,"Queue depth > 10,000",Low,Y,,Y,N,simulated
+SIM5276,2025-02-05 21:07,DataWarehouse,"Queue depth > 10,000",Low,Y,,Y,N,simulated
+SIM5277,2025-02-05 21:24,DataWarehouse,CPU utilization > 90%,High,Y,,Y,N,simulated
+SIM5278,2025-02-05 21:25,DataWarehouse,CPU utilization > 90%,High,Y,,Y,N,simulated
+SIM5279,2025-02-05 21:32,APIGateway,Service health check failed,High,Y,,Y,N,simulated
+SIM5280,2025-02-05 21:55,DataWarehouse,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5281,2025-02-05 22:15,ReportingPlatform,SSL certificate expiring in 7 days,High,N,,N,N,simulated
+SIM5282,2025-02-05 22:43,CustomerPortal,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5283,2025-02-05 22:53,APIGateway,DB connection pool exhausted,High,N,,Y,N,simulated
+SIM5284,2025-02-05 22:54,APIGateway,DB connection pool exhausted,High,N,,Y,N,simulated
+SIM5285,2025-02-05 22:55,APIGateway,DB connection pool exhausted,High,N,,Y,N,simulated
+SIM5286,2025-02-05 23:04,CustomerPortal,API response time > 5s,High,N,,N,N,simulated
+SIM5287,2025-02-05 23:25,AuthService,Error rate > 5% in 5 min,Medium,N,,N,N,simulated
+SIM5288,2025-02-05 23:51,IntegrationHub,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5289,2025-02-05 23:52,IntegrationHub,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5290,2025-02-05 23:53,IntegrationHub,Failed login attempts > 50/min,Medium,Y,,Y,N,simulated
+SIM5291,2025-02-06 00:00,ReportingPlatform,API response time > 5s,Medium,N,,N,N,simulated
+SIM5292,2025-02-06 00:24,DataWarehouse,"Queue depth > 10,000",Medium,N,,Y,N,simulated
+SIM5293,2025-02-06 00:25,DataWarehouse,"Queue depth > 10,000",Medium,N,,Y,N,simulated
+SIM5294,2025-02-06 00:26,DataWarehouse,"Queue depth > 10,000",Medium,N,,Y,N,simulated
+SIM5295,2025-02-06 00:32,IntegrationHub,Batch job failure,Low,Y,,Y,N,simulated
+SIM5296,2025-02-06 00:33,IntegrationHub,Batch job failure,Low,Y,,Y,N,simulated
+SIM5297,2025-02-06 00:34,IntegrationHub,Batch job failure,Low,Y,,Y,N,simulated
+SIM5298,2025-02-06 00:43,CustomerPortal,Error rate > 5% in 5 min,High,N,,N,N,simulated
+SIM5299,2025-02-06 00:57,LicenseCore,Error rate > 5% in 5 min,Critical,N,,Y,N,simulated (pattern-breaking)
+SIM5300,2025-02-06 01:23,AuthService,Error rate > 5% in 5 min,Medium,N,,N,N,simulated

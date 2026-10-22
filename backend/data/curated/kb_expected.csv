@@ -1,0 +1,31 @@
+id,title,excel_label,expected_action,changed,reason
+KB4001,How to reset user password via admin console,update,archive,Y,duplicate title; superseded by KB4021 (more recently updated)
+KB4002,Troubleshoot LicenseCore slow response,update,archive,Y,duplicate title; superseded by KB4022 (more recently updated)
+KB4003,BillingEngine error codes reference guide,update,archive,Y,duplicate title; superseded by KB4023 (more recently updated)
+KB4004,New user onboarding checklist – IT setup,update,archive,Y,duplicate title; superseded by KB4024 (more recently updated)
+KB4005,VPN setup for remote employees,update,update,N,Excel Recommended_Action=Update
+KB4006,IntegrationHub API error handling runbook,update,update,N,Excel Recommended_Action=Update
+KB4007,Handling P1 major incidents – escalation guide,update,archive,Y,duplicate title; superseded by KB4027 (more recently updated)
+KB4008,Monthly batch job monitoring procedure,archive,archive,N,duplicate title; superseded by KB4028 (more recently updated)
+KB4009,SSL certificate renewal process,archive,archive,N,Excel Recommended_Action=Archive
+KB4010,Data export request fulfillment SOP,archive,archive,N,Excel Recommended_Action=Archive
+KB4011,MFA enrollment guide for end users,update,update,N,Excel Recommended_Action=Update
+KB4012,CustomerPortal – common login issues,archive,archive,N,Excel Recommended_Action=Archive
+KB4013,BillingEngine integration error troubleshooting,update,update,N,Excel Recommended_Action=Update
+KB4014,Report generation timeout – known workarounds,update,update,N,Excel Recommended_Action=Update
+KB4015,Access provisioning approval workflow,update,update,N,Excel Recommended_Action=Update
+KB4016,Mobile app troubleshooting guide,update,update,N,Excel Recommended_Action=Update
+KB4017,Change management approval process,archive,archive,N,Excel Recommended_Action=Archive
+KB4018,Database connection pool tuning guide,update,update,N,Excel Recommended_Action=Update
+KB4019,Incident categorization and priority matrix,update,update,N,Excel Recommended_Action=Update
+KB4020,API gateway throttling and retry policy,update,update,N,Excel Recommended_Action=Update
+KB4021,How to reset user password via admin console,update,update,N,Excel Recommended_Action=Update
+KB4022,Troubleshoot LicenseCore slow response,update,update,N,Excel Recommended_Action=Update
+KB4023,BillingEngine error codes reference guide,update,update,N,Excel Recommended_Action=Update
+KB4024,New user onboarding checklist – IT setup,update,update,N,Excel Recommended_Action=Update
+KB4025,VPN setup for remote employees,update,archive,Y,duplicate title; superseded by KB4005 (more recently updated)
+KB4026,IntegrationHub API error handling runbook,update,archive,Y,duplicate title; superseded by KB4006 (more recently updated)
+KB4027,Handling P1 major incidents – escalation guide,update,update,N,Excel Recommended_Action=Update
+KB4028,Monthly batch job monitoring procedure,update,update,N,Excel Recommended_Action=Update
+KB4029,SSL certificate renewal process,update,archive,Y,duplicate title; superseded by KB4009 (more recently updated)
+KB4030,Data export request fulfillment SOP,archive,archive,N,duplicate title; superseded by KB4010 (more recently updated)

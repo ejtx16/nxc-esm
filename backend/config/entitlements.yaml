@@ -1,0 +1,12 @@
+# Role -> systems a requester may self-serve (SR-2). level 'standard' = user-level access.
+roles:
+  Agent:        {systems: [LicenseCore, CustomerPortal, WorkflowEngine]}
+  Analyst:      {systems: [DataWarehouse, ReportingPlatform, WorkflowEngine, CustomerPortal]}
+  Engineer:     {systems: [IntegrationHub, APIGateway, WorkflowEngine, DataWarehouse, CustomerPortal]}
+  Finance:      {systems: [BillingEngine, ReportingPlatform, WorkflowEngine]}
+  Support:      {systems: [CustomerPortal, NotificationService, WorkflowEngine, LicenseCore]}
+  Manager:      {systems: [ReportingPlatform, WorkflowEngine, CustomerPortal, DataWarehouse]}
+# Never self-served regardless of role (privileged / financial). PRD SR-4.
+privileged_levels: [admin, owner, superuser, write-all]
+privileged_systems: [BillingEngine, AuthService]
+standard_request_types: [Password Reset, Access Provisioning]

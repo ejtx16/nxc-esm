@@ -1,0 +1,44 @@
+# Runtime defaults. Operator-changeable values (kill switch, LLM mode, surge) live in the DB `settings` table.
+sim:
+  start: now                       # "now" = local wall clock in `timezone`; or an ISO timestamp to pin it
+  timezone: Asia/Manila            # PH time (UTC+8)
+alert:
+  dedupe_window_s: 600
+  suppress_confidence: 0.85
+sla_hours: {P1: 1, P2: 8, P3: 24, P4: 72}
+escalate_at_fraction: 0.5          # IT-5
+triage:
+  similar_k: 3
+  kb_attach_min_accuracy: 90
+kb:
+  accuracy_threshold: 90
+  fresh_days: 180
+  freshness_per_day: 0.1
+  freshness_cap: 35
+  escalation_weight: 0.6
+  escalation_cap: 35
+  deprecated_each: 8
+  deprecated_cap: 24
+  post_update_escalation_factor: 0.5   # modelled: updated articles stop failing as often
+  archive_below: 70
+  archive_max_usage: 60
+  update_below: 90
+  deprecated_paths:
+    "LicenseCore v2 admin console": "LicenseCore v3 operations console"
+    "legacy SSO gateway": "AuthService (Entra SSO)"
+    "\\\\nexa-fs01\\runbooks": "the NexaStack v4 runbook library"
+    "NexaStack v3": "NexaStack v4"
+    "Splunk classic dashboards": "Dynatrace service flow dashboards"
+    "manual round-robin assignment": "skills-based routing"
+llm:
+  max_attempts: 3                  # retries on rate limit / connection / 5xx; each attempt is audited
+  retry_backoff_s: 0.5             # doubles per attempt; timeouts are not retried (OR-4)
+audit:                             # ADR-0004 / DR-0009
+  max_payload_chars: 2000          # span input/output JSON is truncated to this (e-mails are masked)
+  log_tool_reads: true             # read-only tool calls become `tool` spans inside a trace
+  capture_thinking_summary: true   # ask for summarized thinking and store it with the LLM call
+  pricing:                         # USD per million tokens, claude-opus-5-5 (cache_write is an assumption)
+    input: 4.0
+    output: 20.0
+    cache_read: 0.20
+    cache_write: 5.0
