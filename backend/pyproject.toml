@@ -3,7 +3,7 @@ name = "esm-agentic-ops"
 version = "0.1.0"
 description = "ESM Agentic Ops — LangGraph multi-agent prototype"
 requires-python = ">=3.10"
-license = { text = "MIT" }
+license = { text = "GPL-3.0-or-later" }
 dependencies = [
   "anthropic>=1.17",
   "langgraph>=1.0",
